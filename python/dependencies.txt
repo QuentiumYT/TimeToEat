@@ -1,0 +1,9 @@
+Installing with pip:
+Adafruit-BBIO
+pdf2image
+Pillow
+PyPDF2
+requests
+RPi.GPIO
+RPLCD
+dotenv

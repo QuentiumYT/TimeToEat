@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>TimeToEat - Temps réel</title>
+    <meta name="description" content="Consultez la fréquentation, le temps d'attente en temps réel de la cantine du Heinrich-Nessel ou que vous soyez !">
+    <meta name="language" content="fr">
+    <meta name="keywords" content="timetoeat, time-to-eat, menu, cantine, temps, attente, heinrich nessel, st philomene">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/TimeToEat.png">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117519485-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-117519485-3');
+    </script>
+</head>
+
+<body>
+    <div class="menu">
+        <div class=" menu-burger">
+            <div class="conteneur-burger">
+                <div class="burger">
+                </div>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="index.php">Accueil</a>
+            </li>
+            <li>
+                <a href="historique.php">Historique</a>
+            </li>
+            <li>
+                <a href="realtime.html">Temps réel</a>
+            </li>
+            <li>
+                <a href="more.html">Qui sommes-nous ?</a>
+            </li>
+        </ul>
+    </div>
+    <div class="graphique-conteneur-temps-reel">
+        <h1>Temps réel</h1>
+        <div class="graphique">
+            <canvas id="myChart" height="70" canvas></canvas>
+        </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/realtime.js"></script>
+</body>
+
+</html>

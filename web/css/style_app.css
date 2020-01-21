@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "Signika";
+    src: url(../css/Signika-Semibold.ttf);
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 60px;
+    text-align: center;
+    padding: 10px;
+    background-color: #b14701;
+    border-radius: 10px;
+    margin-top: -8px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+}
+
+h3 {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+}
+
+p {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+    background-color: #b14701;
+    border-radius: 10px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: -3%;
+}
+
+.menu ul {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 0;
+    max-width: 400px;
+}
+
+.menu ul li a {
+    padding: 10px;
+    margin: 0px;
+    background-color: #b14701;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-family: "Signika";
+    font-size: 20px;
+    font-weight: 600;
+    display: block;
+    text-align: center;
+}
+
+.menu ul li {
+    display: inline-block;
+    width: 32%;
+}
+
+body {
+    background-color: #d35400;
+    text-align: center;
+    font-family: "Signika";
+    margin: 0;
+}
+
+.graphique {
+    height: 80%;
+}
+
+table {
+    margin: auto;
+    background-color: #b14701;
+    border-radius: 8px;
+    color: white;
+}
+
+th {
+    padding: 10px;
+}
