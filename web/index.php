@@ -145,8 +145,9 @@ $data = historique_personne($datejour, $datejour1, $interval);
             <img src="img/menu1.jpg?1579413633" alt="menu de la semaine">
         </div>
     </section>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/Chart.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/index.js"></script>
     <script>
         window.onload = function() {

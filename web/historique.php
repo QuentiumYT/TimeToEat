@@ -79,8 +79,8 @@ $date = historique_date($datejour_m, $datejour, $interval_m);
             <canvas id="myChart_m" height="70" canvas></canvas>
         </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/historique.js"></script>
     <script>
         window.onload = function() {

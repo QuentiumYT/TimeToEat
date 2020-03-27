@@ -3,37 +3,37 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://timetoeat.xyz/</loc>
+        <loc>https://timetoeat.alwaysdata.net/</loc>
         <lastmod>2020-01-21T16:25:02+00:00</lastmod>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://timetoeat.xyz/historique.php</loc>
+        <loc>https://timetoeat.alwaysdata.net/historique.php</loc>
         <lastmod>2020-01-21T16:25:02+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://timetoeat.xyz/realtime.html</loc>
+        <loc>https://timetoeat.alwaysdata.net/realtime.html</loc>
         <lastmod>2020-01-21T16:25:02+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://timetoeat.xyz/more.html</loc>
+        <loc>https://timetoeat.alwaysdata.net/more.html</loc>
         <lastmod>2019-06-07T09:37:02+00:00</lastmod>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://timetoeat.xyz/index.php</loc>
+        <loc>https://timetoeat.alwaysdata.net/index.php</loc>
         <lastmod>2020-01-21T16:25:02+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://timetoeat.xyz/get_graph.php?date=</loc>
+        <loc>https://timetoeat.alwaysdata.net/get_graph.php?date=</loc>
         <lastmod>2020-01-21T16:25:02+00:00</lastmod>
         <priority>0.64</priority>
     </url>
     <url>
-        <loc>https://timetoeat.xyz/get_graph.php?date_m=</loc>
+        <loc>https://timetoeat.alwaysdata.net/get_graph.php?date_m=</loc>
         <lastmod>2020-01-21T16:25:02+00:00</lastmod>
         <priority>0.64</priority>
     </url>
