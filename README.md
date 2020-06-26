@@ -4,7 +4,7 @@
 [![Donate](https://quentium.fr/+img/github/donate.svg)](https://www.paypal.me/QuentiumYT/1)&nbsp;
 [![Computer](https://quentium.fr/+img/github/raspberry.svg)](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)&nbsp;
 [![Tested on Python 3.5](https://quentium.fr/+img/github/python35.svg)](https://www.python.org/downloads)&nbsp;
-[![Tested on Browsers](https://quentium.fr/+img/github/browsers.svg)](https://try.powermapper.com/Reports/1a52dcaf-e38f-4fcb-ba79-de7dff9b30ed/report/map.BUG.htm)&nbsp;
+![Tested on Browsers](https://quentium.fr/+img/github/browsers.svg)&nbsp;
 [![Application](https://quentium.fr/+img/github/android.svg)](https://timetoeat.alwaysdata.net/application/TimeToEat.apk)&nbsp;
 [![Assets](https://quentium.fr/+img/github/solidworks.svg)](https://www.solidworks.com/)&nbsp;
 [![License](https://quentium.fr/+img/github/mit.svg)](https://github.com/QuentiumYT/TimeToEat/blob/master/LICENSE)&nbsp;
@@ -12,9 +12,11 @@
 
 ## ✨ Introduction
 
+<p align="center">
 <img src="pictures/TimeToEat.png" width=200 height=200>
+</p>
 
-#### TimeToEat is a project for my final high school year exam (2019)
+#### TimeToEat is a project for my final high school year exam (June 2019)
 
 The idea for this project came to us when we noted the rather long waiting time in the canteen queue. So we decided to create a system to know the waiting time remaining as well as the number of people in the queue to be able to optimize its passage time.
 
