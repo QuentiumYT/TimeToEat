@@ -1,6 +1,6 @@
 <h1 align="center">TimeToEat Project ⏰</h1>
 
-[![Website](https://quentium.fr/+img/github/website_timetoeat.svg)](https://timetoeat.alwaysdata.net/)&nbsp;
+[![Website](https://quentium.fr/+img/github/website_timetoeat.svg)](https://timetoeat.alwaysdata.net)&nbsp;
 [![Donate](https://quentium.fr/+img/github/donate.svg)](https://www.paypal.me/QuentiumYT/1)&nbsp;
 [![Computer](https://quentium.fr/+img/github/raspberry.svg)](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)&nbsp;
 [![Tested on Python 3.5](https://quentium.fr/+img/github/python35.svg)](https://www.python.org/downloads)&nbsp;
@@ -13,7 +13,7 @@
 ## ✨ Introduction
 
 <p align="center">
-<img src="pictures/TimeToEat.png" width=200 height=200>
+<img src="pictures/TimeToEat.png" width="200px" height="200px">
 </p>
 
 #### TimeToEat is a project for my final high school year exam (June 2019)
@@ -22,6 +22,6 @@ The idea for this project came to us when we noted the rather long waiting time 
 
 ![TimeToEat Model](pictures/20190503_141348.jpg)
 
-You can find scripts `main.py` alongside `constantes.py` used on the raspberry to communicate with LCD and the [website](https://timetoeat.alwaysdata.net/), you can always check the code but this project is very specific to a model we've made so you might find it useless.
+You can find scripts `main.py` alongside `constantes.py` used on the raspberry to communicate with LCD and the [website](https://timetoeat.alwaysdata.net), you can always check the code but this project is very specific to a model we've made so you might find it useless.
 
 This was a great first project with 2 of my close friends and we managed to get a good mark for this exam thanks to organization and work we've done :D
