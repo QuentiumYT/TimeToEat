@@ -137,12 +137,16 @@ $data = historique_personne($datejour, $datejour1, $interval);
             <a href="historique.php">Voir plus</a>
         </div>
         <div class="menu-cantine">
-            <p>Menu de la semaine</p>
+            <p>Menu de la semaine du Heinrich-Nessel</p>
             <img src="img/menu.jpg?<?= filemtime("img/menu.jpg"); ?>" alt="Menu de la semaine">
         </div>
         <div class="menu-cantine">
-            <p>Menu de la semaine Sainte-Philomène</p>
-            <img src="img/menu1.jpg?1579413633" alt="menu de la semaine">
+            <p>Menu de la semaine du Sainte-Philomène</p>
+            <img src="img/menu1.jpg?<?= filemtime("img/menu1.jpg"); ?>" alt="Menu de la semaine">
+        </div>
+        <div class="menu-cantine">
+            <p>Menu de la semaine du Robert Schuman</p>
+            <img src="img/menu2.jpg?<?= filemtime("img/menu2.jpg"); ?>" alt="Menu de la semaine">
         </div>
     </section>
 
