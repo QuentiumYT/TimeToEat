@@ -1,7 +1,7 @@
 import os, dotenv
 from ftplib import FTP
 
-dotenv.load_dotenv("../../.env")
+dotenv.load_dotenv("../.env")
 
 FTP_HOST = os.environ.get("FTP_HOST")
 PWD = os.environ.get("PWD")

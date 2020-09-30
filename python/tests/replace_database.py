@@ -1,6 +1,6 @@
 import os, dotenv, mysql.connector
 
-dotenv.load_dotenv("../../.env")
+dotenv.load_dotenv("../.env")
 
 SQL_HOST = os.environ.get("SQL_HOST")
 PWD = os.environ.get("PWD")

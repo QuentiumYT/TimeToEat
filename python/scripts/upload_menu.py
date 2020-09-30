@@ -2,7 +2,7 @@ import os, dotenv, urllib.request
 from pdf2image import convert_from_path
 from ftplib import FTP
 
-dotenv.load_dotenv("../../.env")
+dotenv.load_dotenv("../.env")
 
 FTP_HOST = os.environ.get("FTP_HOST")
 PWD = os.environ.get("PWD")

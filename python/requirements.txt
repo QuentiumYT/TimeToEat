@@ -1,7 +1,6 @@
-Installing with pip:
 Adafruit-BBIO
 pdf2image
-Pillow
+pillow
 PyPDF2
 requests
 RPi.GPIO
