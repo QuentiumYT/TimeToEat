@@ -17,8 +17,7 @@ function decryptage($chaine, $cle)
     $i = 0;
     while ($i < strlen($chaine)) {
         try {
-            $index = strpos($alpha, $chaine{
-                $i});
+        $index = strpos($alpha, $chaine[$i]);
             $numero = $index - $cle;
             $cle = $cle + $cle;
             if ($cle > strlen($alpha)) {
@@ -29,8 +28,7 @@ function decryptage($chaine, $cle)
             }
             $liste = $liste . $alpha[$numero];
         } catch (Exception $e) {
-            $liste = $liste . $chaine{
-                $i};
+            $liste = $liste . $chaine[$i];
         }
         $i++;
     }
