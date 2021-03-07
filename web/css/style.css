@@ -3,6 +3,15 @@
     src: url(../css/Signika-Semibold.ttf);
 }
 
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
 .menu {
     position: fixed;
     background-color: #263238;
@@ -14,8 +23,6 @@
 
 body {
     background-color: #e2e2e2;
-    margin: 0;
-    padding: 0;
     font-family: "Signika";
 }
 
@@ -241,10 +248,6 @@ h1 {
     color: black;
 }
 
-canvas#myChart {
-    background-color: white;
-}
-
 .graph a {
     margin-top: 10px;
     padding: 15px;
@@ -392,11 +395,9 @@ h1.slogan-header {
 }
 
 .caroussel-item-img img {
-    width: 65%;
+    width: 75%;
     box-sizing: border-box;
     margin: auto;
-    margin-top: 50%;
-    transform: translateY(-50%);
 }
 
 @media all and (max-width: 850px) {
