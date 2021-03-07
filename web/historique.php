@@ -65,10 +65,10 @@ $date = historique_date($datejour_m, $datejour);
     </div>
     <div class="graphique-conteneur">
         <h1>Historique du Jour</h1>
-        <input id="date" type="date" name="date" value="<?= $datejour ?>">
-        <a class="valider-date" href="fonction.php?date=">Actualiser</a>
         <div class="graphique">
-            <canvas id="myChart" height="70" canvas></canvas>
+            <input id="date" type="date" name="date" value="<?= $datejour ?>">
+            <a class="valider-date" href="fonction.php?date=">Actualiser</a>
+            <canvas id="myChart" height="70"></canvas>
         </div>
     </div>
     <div class="graphique-conteneur">
@@ -76,9 +76,10 @@ $date = historique_date($datejour_m, $datejour);
         <div class="graphique">
             <input id="date-m" type="month" name="date-m" value="<?= date("Y-m") ?>">
             <a class="valider-date-m" href="fonction.php?date_m=">Actualiser</a>
-            <canvas id="myChart_m" height="70" canvas></canvas>
+            <canvas id="myChart_m" height="70"></canvas>
         </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js/historique.js"></script>
