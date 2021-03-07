@@ -38,11 +38,11 @@ function decryptage($chaine, $cle)
 function historique_temps($datemin, $datemax, $interval)
 {
     global $bdd;
-    //Récupération des valeur du jour
+    // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT nb_personne, debit, id FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '"  ORDER BY `time`.`id` DESC ');
 
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recuper en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
     $data = array();
     $z = 0;
     $i = 0;
@@ -70,10 +70,10 @@ function historique_temps($datemin, $datemax, $interval)
 function historique_personne($datemin, $datemax, $interval)
 {
     global $bdd;
-    //Récupération des valeur du jour
+    // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT nb_personne FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recuper en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
     $data = array();
     $z = 0;
     $total_personne = 0;
@@ -96,14 +96,14 @@ function historique_personne($datemin, $datemax, $interval)
 function historique_debit($datemin, $datemax, $interval)
 {
     global $bdd;
-    //Récupération des valeur du jour
+    // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT debit FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recuper en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
     $data = array();
     $z = 0;
     $date_m = $date = date("Y-m-01", strtotime($datemin));
-    $jour = date('N,', strtotime($date_m));
+    $jour = date("N", strtotime($date_m));
     $i = count($cantine) - 1;
     $week = 0;
     $total_debit = 0;
@@ -132,15 +132,13 @@ function historique_debit($datemin, $datemax, $interval)
 function historique_date($datemin, $datemax)
 {
     global $bdd;
-    //Récupération des valeur du jour
+    // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT temps FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recuper en tableaux
-    $data = array();
-    $date = strftime("%A %d %B ", strtotime($data));
+    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
     $date_m = $date = date("Y-m-01", strtotime($datemin));
-    $jour = date('N,', strtotime($date_m));
-    $i = count($cantine)  - 1;
+    $jour = date("N", strtotime($date_m));
+    $i = count($cantine) - 1;
     for ($i; $i > 0; $i--) {
         if ($jour == 6) {
             $date = $cantine[$i][0];
@@ -229,7 +227,7 @@ if (isset($_GET['date_m'])) {
 if (isset($_GET['r'])) {
     $data = $bdd->prepare('SELECT nb_personne, debit FROM now_time  ORDER BY `temps` DESC ,`id` DESC LIMIT 1');
     $data->execute(array());
-    $data = $data->fetch(); // Organiser les valeurs recuper en tableaux
+    $data = $data->fetch(); // Organiser les valeurs recupérées en tableaux
     $nb_personne = $data["nb_personne"];
     $debit = $data["debit"];
     echo $data["nb_personne"];

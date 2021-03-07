@@ -11,7 +11,7 @@ $interval_m = 125;
 $data = historique_temps($datejour, $datejour1, $interval);
 $data1 = historique_personne($datejour, $datejour1, $interval);
 $data1_m = historique_debit($datejour_m, $datejour, $interval_m);
-$date = historique_date($datejour_m, $datejour, $interval_m);
+$date = historique_date($datejour_m, $datejour);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
