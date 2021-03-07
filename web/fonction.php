@@ -142,12 +142,12 @@ function historique_date($datemin, $datemax)
     for ($i; $i > 0; $i--) {
         if ($jour == 6) {
             $date = $cantine[$i][0];
-            $data[] = strftime("%A %d %B ", strtotime($date . " -2 days"));
-            $data[] = strftime("%A %d %B ", strtotime($date . " -1 days"));
+            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . " -2 days")));
+            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . " -1 days")));
             $jour = 1;
         }
         $date = $cantine[$i][0];
-        $date =  strftime("%A %d %B ", strtotime($date));
+        $date = utf8_encode(strftime("%A %d %B ", strtotime($date)));
         $data[] = $date;
         $i = $i - 130;
         $jour = $jour + 1;
@@ -160,7 +160,7 @@ function historique_mois($date)
 {
     global $bdd;
     $date_min = date('Y-m-01', strtotime($date));
-    $date_max = strftime("%A %d %B ", strtotime($date . " +1 month"));
+    $date_max = utf8_encode(strftime("%A %d %B ", strtotime($date . " +1 month")));
     $cantine = $bdd->prepare('SELECT temps, sum(debit) FROM time WHERE temps > "' . $date_min . '" AND temps < "' . $date_max . '" GROUP BY  DAY(temps) ORDER BY id ASC');
     $cantine->execute(array());
     $val = array();
@@ -177,7 +177,7 @@ function historique_mois($date)
         } else {
             $val[] = 0;
         }
-        $date[] = strftime("%A %d %B ", strtotime($datejour));
+        $date[] = utf8_encode(strftime("%A %d %B ", strtotime($datejour)));
         $datejour = date('Y-m-d', strtotime($datejour . "+1 day"));
     }
     return $date;
@@ -214,7 +214,7 @@ if (isset($_GET['date_m'])) {
         } else {
             $val[] = 0;
         }
-        $date[] = strftime("%A %d %B ", strtotime($datejour));
+        $date[] = utf8_encode(strftime("%A %d %B ", strtotime($datejour)));
         $datejour = date('Y-m-d', strtotime($datejour . "+1 day"));
     }
     $data = json_encode($val);
