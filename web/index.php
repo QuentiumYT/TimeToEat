@@ -93,7 +93,7 @@ $data = historique_personne($datejour, $datejour1, $interval);
             </a>
         </div>
         <div class="menu">
-            <div class=" menu-burger">
+            <div class="menu-burger">
                 <div class="conteneur-burger">
                     <div class="burger">
                     </div>
@@ -132,8 +132,8 @@ $data = historique_personne($datejour, $datejour1, $interval);
             </div>
         </div>
         <div class="graph">
-            <h1>Historique du jour </h1>
-            <canvas id="myChart" height="70px"></canvas>
+            <h1>Historique du jour</h1>
+            <canvas id="myChart" style="max-height: 500px"></canvas>
             <a href="historique.php">Voir plus</a>
         </div>
         <div class="menu-cantine">
@@ -165,16 +165,17 @@ $data = historique_personne($datejour, $datejour1, $interval);
                         backgroundColor: 'rgba(211, 84, 0, 0.50)',
                         borderColor: 'rgb(150, 60, 0)',
                         data: <?= $data1 ?>,
-                        yAxisID: 'y-axis-2',
+                        yAxisID: 'y-axis-2'
                     }, {
                         label: "Nombre de personnes",
                         backgroundColor: 'rgba(230, 126, 34,0.5)',
                         borderColor: 'rgba(230, 126, 34,1.0)',
                         data: <?= $data ?>,
                         yAxisID: 'y-axis-1'
-                    }],
+                    }]
                 },
                 options: {
+                    responsive: true,
                     tooltips: {
                         mode: 'index',
                         intersect: false
@@ -185,20 +186,20 @@ $data = historique_personne($datejour, $datejour1, $interval);
                             type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                             display: true,
                             position: 'left',
-                            id: 'y-axis-1',
+                            id: 'y-axis-1'
                         }, {
                             type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
                             display: true,
                             position: 'right',
                             id: 'y-axis-2',
                             gridLines: { // grid line settings
-                                drawOnChartArea: false, // only want the grid lines for one axis to show up
-                            },
-                        }],
+                                drawOnChartArea: false // only want the grid lines for one axis to show up
+                            }
+                        }]
                     }
                 }
             });
-        };
+        }
     </script>
 </body>
 

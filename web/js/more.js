@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(function () {
     $('.js-scrollTo').on('click', function () {
         var page = $(this).attr('href');
         var speed = 750;
@@ -17,7 +17,7 @@ $(function () {
     });
 });
 
-$(document).ready(function () {
+$(function () {
     var ok = $('html').css('width');
     ok = parseInt(ok);
     $('.right').click(function () {
