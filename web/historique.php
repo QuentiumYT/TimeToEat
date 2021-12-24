@@ -80,9 +80,11 @@ $date = historique_date($datejour_m, $datejour);
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2"></script>
+
     <script src="js/historique.js"></script>
+
     <script>
         window.onload = function() {
             var ctx = document.getElementById('myChart').getContext('2d');
