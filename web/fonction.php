@@ -136,6 +136,7 @@ function historique_date($datemin, $datemax)
     $cantine = $bdd->prepare('SELECT temps FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
     $cantine->execute(array());
     $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
+    $data = array();
     $date_m = $date = date("Y-m-01", strtotime($datemin));
     $jour = date("N", strtotime($date_m));
     $i = count($cantine) - 1;
