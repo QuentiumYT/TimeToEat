@@ -102,8 +102,8 @@ function historique_debit($datemin, $datemax, $interval)
     $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
     $data = array();
     $z = 0;
-    $date_m = $date = date("Y-m-01", strtotime($datemin));
-    $jour = date("N", strtotime($date_m));
+    $date_m = $date = date('Y-m-01', strtotime($datemin));
+    $jour = date('N', strtotime($date_m));
     $i = count($cantine) - 1;
     $week = 0;
     $total_debit = 0;
@@ -137,14 +137,14 @@ function historique_date($datemin, $datemax)
     $cantine->execute(array());
     $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
     $data = array();
-    $date_m = $date = date("Y-m-01", strtotime($datemin));
-    $jour = date("N", strtotime($date_m));
+    $date_m = $date = date('Y-m-01', strtotime($datemin));
+    $jour = date('N', strtotime($date_m));
     $i = count($cantine) - 1;
     for ($i; $i > 0; $i--) {
         if ($jour == 6) {
             $date = $cantine[$i][0];
-            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . " -2 days")));
-            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . " -1 days")));
+            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . "-2 days")));
+            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . "-1 day")));
             $jour = 1;
         }
         $date = $cantine[$i][0];
@@ -161,7 +161,7 @@ function historique_mois($date)
 {
     global $bdd;
     $date_min = date('Y-m-01', strtotime($date));
-    $date_max = utf8_encode(strftime("%A %d %B ", strtotime($date . " +1 month")));
+    $date_max = utf8_encode(strftime("%A %d %B ", strtotime($date . '+1 month')));
     $cantine = $bdd->prepare('SELECT temps, sum(debit) FROM time WHERE temps > "' . $date_min . '" AND temps < "' . $date_max . '" GROUP BY  DAY(temps) ORDER BY id ASC');
     $cantine->execute(array());
     $val = array();
@@ -179,14 +179,14 @@ function historique_mois($date)
             $val[] = 0;
         }
         $date[] = utf8_encode(strftime("%A %d %B ", strtotime($datejour)));
-        $datejour = date('Y-m-d', strtotime($datejour . "+1 day"));
+        $datejour = date('Y-m-d', strtotime($datejour . '+1 day'));
     }
     return $date;
 }
 
 if (isset($_GET['date'])) {
     $datejour = $_GET['date'];
-    $datejour1 = $date = date("Y-m-d", strtotime($datejour . " +1 days"));
+    $datejour1 = $date = date('Y-m-d', strtotime($datejour . '+1 day'));
     $interval = 5;
     $data = historique_temps($datejour, $datejour1, $interval);
     $data1 = historique_personne($datejour, $datejour1, $interval);
@@ -198,7 +198,7 @@ if (isset($_GET['date'])) {
 if (isset($_GET['date_m'])) {
     $date = $_GET['date_m'];
     $date_min = date('Y-m-01', strtotime($date));
-    $date_max = $date = date("Y-m-01", strtotime($date . " +1 month"));
+    $date_max = $date = date('Y-m-01', strtotime($date . '+1 month'));
     $cantine = $bdd->prepare('SELECT temps , sum(debit) FROM time WHERE temps > "' . $date_min . '" AND temps < "' . $date_max . '" GROUP BY  DAY(temps) ORDER BY id ASC');
     $cantine->execute(array());
     $val = array();

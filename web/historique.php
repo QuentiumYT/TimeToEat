@@ -3,8 +3,8 @@ include('fonction.php');
 setlocale(LC_TIME, 'fr_FR', 'fra');
 ini_set('memory_limit', '-1');
 
-$datejour = date("Y-m-d");
-$datejour1 = date('Y-m-d', strtotime("+1 day"));
+$datejour = date('Y-m-d');
+$datejour1 = date('Y-m-d', strtotime('+1 day'));
 $datejour_m = date('Y-m-1');
 $interval = 5;
 $interval_m = 125;
@@ -74,7 +74,7 @@ $date = historique_date($datejour_m, $datejour);
     <div class="graphique-conteneur">
         <h1>Historique du Mois</h1>
         <div class="graphique">
-            <input id="date-m" type="month" name="date-m" value="<?= date("Y-m") ?>">
+            <input id="date-m" type="month" name="date-m" value="<?= date('Y-m') ?>">
             <a class="valider-date-m" href="fonction.php?date_m=">Actualiser</a>
             <canvas id="myChart_m" height="70"></canvas>
         </div>

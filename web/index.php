@@ -39,8 +39,8 @@ $temps = $nb_personne * 9;
 $temps_h = intval($temps / 3600);
 $temps_m = intval(($temps % 3600) / 60);
 
-$datejour = date("Y-m-d ");
-$datejour1 = date('Y-m-d', strtotime("+1 day"));
+$datejour = date('Y-m-d');
+$datejour1 = date('Y-m-d', strtotime('+1 day'));
 $interval = 5;
 
 $data1 = historique_temps($datejour, $datejour1, $interval);
