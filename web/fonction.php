@@ -186,6 +186,9 @@ function historique_mois($date)
 
 if (isset($_GET['date'])) {
     $datejour = $_GET['date'];
+    if (empty($_GET['date'])) {
+        $datejour = date('Y-m-d');
+    }
     $datejour1 = $date = date('Y-m-d', strtotime($datejour . '+1 day'));
     $interval = 5;
     $data = historique_temps($datejour, $datejour1, $interval);
