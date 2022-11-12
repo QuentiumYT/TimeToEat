@@ -4,20 +4,19 @@ setlocale(LC_TIME, 'fr_FR', 'fra');
 ini_set('memory_limit', '-1');
 
 try {
-    $bdd = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $bdd = new PDO("mysql:host=$host;dbname=$db", $username, $password);
     $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
 
-function decryptage($chaine, $cle)
-{
-    $alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    $liste = "";
+function decryptage($chaine, $cle) {
+    $alpha = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    $liste = '';
     $i = 0;
     while ($i < strlen($chaine)) {
         try {
-        $index = strpos($alpha, $chaine[$i]);
+            $index = strpos($alpha, $chaine[$i]);
             $numero = $index - $cle;
             $cle = $cle + $cle;
             if ($cle > strlen($alpha)) {
@@ -35,14 +34,13 @@ function decryptage($chaine, $cle)
     return $liste;
 }
 
-function historique_temps($datemin, $datemax, $interval)
-{
+function historique_temps($datemin, $datemax, $interval) {
     global $bdd;
     // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT nb_personne, debit, id FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '"  ORDER BY `time`.`id` DESC ');
 
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs récupérées en tableaux
     $data = array();
     $z = 0;
     $i = 0;
@@ -67,13 +65,12 @@ function historique_temps($datemin, $datemax, $interval)
     return $data;
 }
 
-function historique_personne($datemin, $datemax, $interval)
-{
+function historique_personne($datemin, $datemax, $interval) {
     global $bdd;
     // Récupération des valeurs du jour
-    $cantine = $bdd->prepare('SELECT nb_personne FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
+    $cantine = $bdd->prepare('SELECT nb_personne FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC');
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs récupérées en tableaux
     $data = array();
     $z = 0;
     $total_personne = 0;
@@ -93,13 +90,12 @@ function historique_personne($datemin, $datemax, $interval)
     return $data;
 }
 
-function historique_debit($datemin, $datemax, $interval)
-{
+function historique_debit($datemin, $datemax, $interval) {
     global $bdd;
     // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT debit FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs récupérées en tableaux
     $data = array();
     $z = 0;
     $date_m = $date = date('Y-m-01', strtotime($datemin));
@@ -129,13 +125,12 @@ function historique_debit($datemin, $datemax, $interval)
     return $data;
 }
 
-function historique_date($datemin, $datemax)
-{
+function historique_date($datemin, $datemax) {
     global $bdd;
     // Récupération des valeurs du jour
     $cantine = $bdd->prepare('SELECT temps FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '" ORDER BY `id` DESC ');
     $cantine->execute(array());
-    $cantine = $cantine->fetchall(); // Organiser les valeurs recupérées en tableaux
+    $cantine = $cantine->fetchall(); // Organiser les valeurs récupérées en tableaux
     $data = array();
     $date_m = $date = date('Y-m-01', strtotime($datemin));
     $jour = date('N', strtotime($date_m));
@@ -143,12 +138,12 @@ function historique_date($datemin, $datemax)
     for ($i; $i > 0; $i--) {
         if ($jour == 6) {
             $date = $cantine[$i][0];
-            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . "-2 days")));
-            $data[] = utf8_encode(strftime("%A %d %B ", strtotime($date . "-1 day")));
+            $data[] = utf8_encode(date("%A %d %B ", strtotime($date . "-2 days")));
+            $data[] = utf8_encode(date("%A %d %B ", strtotime($date . "-1 day")));
             $jour = 1;
         }
         $date = $cantine[$i][0];
-        $date = utf8_encode(strftime("%A %d %B ", strtotime($date)));
+        $date = utf8_encode(date("%A %d %B ", strtotime($date)));
         $data[] = $date;
         $i = $i - 130;
         $jour = $jour + 1;
@@ -157,11 +152,10 @@ function historique_date($datemin, $datemax)
     return $data;
 }
 
-function historique_mois($date)
-{
+function historique_mois($date) {
     global $bdd;
     $date_min = date('Y-m-01', strtotime($date));
-    $date_max = utf8_encode(strftime("%A %d %B ", strtotime($date . '+1 month')));
+    $date_max = utf8_encode(date("%A %d %B ", strtotime($date . '+1 month')));
     $cantine = $bdd->prepare('SELECT temps, sum(debit) FROM time WHERE temps > "' . $date_min . '" AND temps < "' . $date_max . '" GROUP BY  DAY(temps) ORDER BY id ASC');
     $cantine->execute(array());
     $val = array();
@@ -178,7 +172,7 @@ function historique_mois($date)
         } else {
             $val[] = 0;
         }
-        $date[] = utf8_encode(strftime("%A %d %B ", strtotime($datejour)));
+        $date[] = utf8_encode(date("%A %d %B ", strtotime($datejour)));
         $datejour = date('Y-m-d', strtotime($datejour . '+1 day'));
     }
     return $date;
@@ -218,7 +212,7 @@ if (isset($_GET['date_m'])) {
         } else {
             $val[] = 0;
         }
-        $date[] = utf8_encode(strftime("%A %d %B ", strtotime($datejour)));
+        $date[] = utf8_encode(date("%A %d %B ", strtotime($datejour)));
         $datejour = date('Y-m-d', strtotime($datejour . "+1 day"));
     }
     $data = json_encode($val);
@@ -231,7 +225,7 @@ if (isset($_GET['date_m'])) {
 if (isset($_GET['r'])) {
     $data = $bdd->prepare('SELECT nb_personne, debit FROM now_time  ORDER BY `temps` DESC ,`id` DESC LIMIT 1');
     $data->execute(array());
-    $data = $data->fetch(); // Organiser les valeurs recupérées en tableaux
+    $data = $data->fetch(); // Organiser les valeurs récupérées en tableaux
     $nb_personne = $data["nb_personne"];
     $debit = $data["debit"];
     echo $data["nb_personne"];
