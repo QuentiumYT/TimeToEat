@@ -37,7 +37,10 @@ function decryptage($chaine, $cle) {
 function historique_temps($datemin, $datemax, $interval) {
     global $bdd;
     // Récupération des valeurs du jour
-    $cantine = $bdd->prepare('SELECT nb_personne, debit, id FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '"  ORDER BY `time`.`id` DESC ');
+    // $cantine = $bdd->prepare('SELECT nb_personne, debit, id FROM time WHERE temps > "' . $datemin . '" AND temps < "' . $datemax . '"  ORDER BY `time`.`id` DESC ');
+
+    // Récupération des 130 dernières valeurs (plus mis à jour automatiquement)
+    $cantine = $bdd->prepare('SELECT nb_personne, debit, id FROM time ORDER BY `time`.`id` DESC LIMIT 130');
 
     $cantine->execute(array());
     $cantine = $cantine->fetchall(); // Organiser les valeurs récupérées en tableaux
