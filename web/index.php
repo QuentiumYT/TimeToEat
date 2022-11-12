@@ -58,7 +58,7 @@ $data = historique_personne($datejour, $datejour1, $interval);
     <title>TimeToEat - Accueil</title>
     <meta name="description" content="Consultez la fréquentation, le temps d'attente en temps réel de la cantine du Heinrich-Nessel ou que vous soyez !">
     <meta name="language" content="fr">
-    <meta name="keywords" content="timetoeat, time-to-eat, menu, cantine, temps, attente, heinrich nessel, st philomene">
+    <meta name="keywords" content="timetoeat, time-to-eat, menu, cantine, temps, attente, heinrich nessel">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="icon" type="image/png" href="img/TimeToEat.png">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -133,7 +133,7 @@ $data = historique_personne($datejour, $datejour1, $interval);
         </div>
         <div class="graph">
             <h1>Historique du jour</h1>
-            <canvas id="myChart" style="max-height: 500px"></canvas>
+            <canvas id="myChart"></canvas>
             <a href="historique.php">Voir plus</a>
         </div>
         <div class="menu-cantine">
